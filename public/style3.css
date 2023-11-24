@@ -3,6 +3,7 @@
     padding:0;
     box-sizing: border-box;
     font-family: sans-serif;
+    overflow: hidden;
 }
 
 body{
@@ -11,27 +12,47 @@ body{
 }
 
 #msg{
-    position: relative;
-    margin-top: 20%;
-    left: 33%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    margin-top: 40%;
+    margin-left: 27%;
     width: 630px;
     box-shadow: 0 15px 35px rgba(16,5,10, 0.6);
     border-radius: 10px;
     border-style : none;
     letter-spacing: 2px;
     padding: 15px;
-  
-    
-
+   
+ 
 } 
+#messages{
+
+    overflow-y: scroll;
+    scrollbar-width: thin;
+    border-radius: 10px;
+    border: 1px solid #1f1d1d;
+    background: linear-gradient(rgb(238, 240, 128) , rgb(180, 134, 49));
+    height: 350px;
+    padding: 10px;
+    margin-left: 33%;
+    margin-right: 34%;
+    margin-top: 4%;
+   
+}
+    
+ 
 
 
 
 button{
+    position: fixed;
+    top: 0;
+    left: 0;
     display: block;
-    margin-left: auto;
+    margin-left: 900px;
     margin-right: auto;
-    margin-top: 100px;
+    margin-top: 700px;
     color: #fff;
     background: transparent;
     border: 1px solid #fff;
