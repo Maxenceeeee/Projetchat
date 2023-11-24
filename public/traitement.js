@@ -34,4 +34,6 @@ const postInscription = function (req, res) {
   res.redirect('/index.html');
 };
 
-module.exports = { postInscription };
+module.exports = { 
+  postInscription 
+};
