@@ -1,0 +1,67 @@
+*{
+    margin: 0;
+    padding:0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body{
+    height: 100vh;
+    background: linear-gradient(rgb(116, 114, 212) , rgb(31, 31, 146));
+}
+
+.partie1{
+    margin-left: 35%;
+    width: 400px;
+    background: rgba(189, 182, 168, 0.3);
+    box-shadow: 0 15px 35px rgba(16,5,10, 0.6);
+    border-radius: 30px;
+    padding: 40px;
+}
+
+.partie1{
+    color: rgb(255, 255, 255);
+    text-align: center;
+    margin-top: 30px;
+}
+
+.Petitbloc{
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.Petitbloc label{
+    position: absolute;
+    top: -20px;
+    left: 0;
+    color: white;
+    padding: 10px 0;
+    font-size: 16px;
+    pointer-events: none;
+}
+
+.Petitbloc input{
+    width: 100%;
+    background: transparent;
+    border: 0;
+    outline: none;
+    font-size: 16px;
+    padding: 10px 0;
+    border-bottom: 1px solid #fff;
+}
+button{
+    color: #fff;
+    background: transparent;
+    border: 1px solid #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    letter-spacing: 2px;
+    font-size: 15px;
+    cursor: pointer;
+
+}
+
+button:hover{
+    color: rgb(187, 168, 133);
+    background: #fff;
+}

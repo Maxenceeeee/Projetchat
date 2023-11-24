@@ -1,0 +1,49 @@
+*{
+    margin: 0;
+    padding:0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body{
+    height: 100vh;
+    background: linear-gradient(rgb(238, 240, 128) , rgb(180, 134, 49));
+}
+
+#msg{
+    position: relative;
+    margin-top: 20%;
+    left: 33%;
+    width: 630px;
+    box-shadow: 0 15px 35px rgba(16,5,10, 0.6);
+    border-radius: 10px;
+    border-style : none;
+    letter-spacing: 2px;
+    padding: 15px;
+  
+    
+
+} 
+
+
+
+button{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 100px;
+    color: #fff;
+    background: transparent;
+    border: 1px solid #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    letter-spacing: 2px;
+    font-size: 15px;
+    cursor: pointer;
+
+}
+
+button:hover{
+    color: rgb(187, 168, 133);
+    background: #fff;
+}

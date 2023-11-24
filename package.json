@@ -1,0 +1,15 @@
+{
+  "name": "projetchat",
+  "version": "1.0.0",
+  "description": "app de chat cours devops",
+  "main": "index.js",
+  "author": "Maxence",
+  "dependencies": {
+    "express": "^4.18.2",
+    "mysql": "^2.18.1",
+    "socket.io": "^4.7.2"
+  },
+  "devDependencies": {
+    "cypress": "^13.6.0"
+  }
+}
