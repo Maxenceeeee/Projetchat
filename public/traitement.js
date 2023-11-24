@@ -19,6 +19,11 @@ const postInscription = function (req, res) {
   var mail = req.body.mail;
   var mdp = req.body.mdp;
 
+  if (!nom || !prenom || !pseudo || !mail || !mdp) {
+    res.status(400).redirect('/');
+    return;
+  }
+
   var values = [nom, prenom, pseudo, mdp, mail];
   
   con.query("INSERT INTO utilisateur (nom, prenom, pseudo, motDePasse, adresseMail) VALUES (?, ?, ?, ?, ?)", values, function (err, result) {
