@@ -1,3 +1,10 @@
+/*<?php
+session_start(); 
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $_SESSION["pseudo"] = $_POST["pseudo"];
+}
+?>*/
 
 var mysql = require('mysql');
 var connection = mysql.createConnection({
