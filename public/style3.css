@@ -9,21 +9,22 @@
 body{
     height: 100vh;
     background: linear-gradient(rgb(238, 240, 128) , rgb(180, 134, 49));
+    overflow: hidden;
 }
 
-#msg{
-    position: fixed;
+#editor {
+    /* position: fixed;
     top: 0;
-    left: 0;
-    margin-top: 40%;
-    margin-left: 27%;
+    left: 0; */
+    /* margin-top: 40%;
+    margin-left: 27%; */
     width: 630px;
     box-shadow: 0 15px 35px rgba(16,5,10, 0.6);
     border-radius: 10px;
     border-style : none;
     letter-spacing: 2px;
     padding: 15px;
-   
+    background-color: white;
  
 } 
 #messages{
@@ -46,7 +47,7 @@ body{
 
 
 
-button{
+/* button{
     position: fixed;
     top: 0;
     left: 0;
@@ -63,7 +64,7 @@ button{
     font-size: 15px;
     cursor: pointer;
 
-}
+} */
 
 button:hover{
     color: rgb(187, 168, 133);

@@ -1,44 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style3.css" />
 
     <title>Chat</title>
+    <script src="https://cdn.ckeditor.com/ckeditor5/41.1.0/inline/ckeditor.js"></script>
 </head>
+
 <body>
     <div id="messages"></div>
     <form action="">
-        <input id="msg" autocomplete="off" /> <button>Envoyer</button>
+        <!-- <input id="msg" autocomplete="off" placeholder="Entrez votre message ici"/> <button>Envoyer</button> -->
     </form>
-    
-    
+
+
     <script src="socket.io/socket.io.js"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    
+        <div id="editor"></div>
+        <button onclick="send()">Envoyer</button>
+
+    </div>
+    
+
     <script>
-        $(function(){
-            var socket = io();
+        var socket = io();
+        let editor = null;
+
+        InlineEditor
+            .create(document.querySelector('#editor'))
+            .then(newEditor => {
+                editor = newEditor;
+                editor.editing.view.document.on('enter', ( evt, data ) => {
+                    send();
+                });
+            } )
+            .catch(error => {
+                console.error(error);
+            })
+        ;
+
+        // $("form").submit(function (e) {
+        //     e.preventDefault(); // envoyÃ©
+
+        //     socket.emit("message", $("#msg").val());
+        //     $("#msg").val("");
+        //     return false;
+        // });
+        
+        function send() {
+            const msg = editor.getData();
             
-            $("form").submit(function (e){
-                e.preventDefault(); // envoyÃ©
+            socket.emit("message", msg);
+            editor.setData("");
+        }
 
-                socket.emit("message", $("#msg").val());
-                $("#msg").val("");
-                return false;
-            });
-
-            socket.on('message', function(msg) {
-                $("#messages").append($("<p>").text(msg));
-            });
-
+        socket.on('message', function (msg) {
+            $("#messages").append(msg);
         });
-         
-        
-        
-
     </script>
 
-
 </body>
+
 </html>
