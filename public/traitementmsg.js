@@ -22,7 +22,9 @@ con.connect(function (err) {
 
 const postIndex = function (req, res) {
   var messages = req.body.messages;
-  var utilisateurId = req.body.utilisateurId;
+  /*var pseudo = req.body.pseudo;
+  const id = 'SELECT id FROM utilisateur WHERE pseudo = ?', [pseudo];
+  var utilisateurId = id;*/
 
   if (!messages || !utilisateurId ) {
     res.status(400).redirect('/');
