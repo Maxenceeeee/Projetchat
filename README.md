@@ -1,5 +1,5 @@
 # Projetchat
  chat
 
-Ouvrir le server Socket : dans un terminal, rentrer la commande "node index.js"
+Ouvrir le server Socket : dans le terminal de vscode, rentrer la commande "node index.js"
 
