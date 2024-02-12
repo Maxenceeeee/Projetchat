@@ -1,4 +1,9 @@
 const mysql = require('mysql');
+var app = require('express')();
+var http = require('http').Server(app);
+var session = require('express-session');
+
+app.use(session({secret: 'super secret'}));
 
 const con = mysql.createConnection({
   host: "localhost",

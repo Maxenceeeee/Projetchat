@@ -56,6 +56,7 @@
             
             socket.emit("message", msg);
             editor.setData("");
+            res.redirect('/traitementmsg');
         }
 
         socket.on('message', function (msg) {

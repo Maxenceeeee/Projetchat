@@ -9,6 +9,8 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 const { postConnection } = require('./public/traitementconnection');
 const { postInscription } = require('./public/traitement');
+const { postIndex } = require('./public/traitementmsg');
+
 
 
 
@@ -55,6 +57,9 @@ app.get('/style.css', (req, res) => {
 })
 
 app.post('/connection', postConnection);
+
+app.post('/index', postIndex);
+
 
 server.listen(3000, () => {
     console.log('Ecoute sur le port 3000');

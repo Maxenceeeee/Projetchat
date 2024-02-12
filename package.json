@@ -6,6 +6,7 @@
   "author": "Maxence",
   "dependencies": {
     "express": "^4.18.2",
+    "express-session": "^1.18.0",
     "mysql": "^2.18.1",
     "socket.io": "^4.7.2"
   },

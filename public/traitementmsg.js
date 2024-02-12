@@ -1,26 +1,23 @@
-/*<?php
-session_start(); 
+const mysql = require('mysql');
+var app = require('express')();
+var http = require('http').Server(app);
+var session = require('express-session');
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $_SESSION["pseudo"] = $_POST["pseudo"];
-}
-?>*/
+app.use(session({ secret: 'super secret' }));
 
-var mysql = require('mysql');
 var connection = mysql.createConnection({
   host: "localhost",
   user: "root",
   password: "",
   database: "chat"
 });
-connection.connect(function(err){
-    if(err){
-        console.error('Impossible de se connecter ', err);
-    }
+connection.connect(function (err) {
+  if (err) {
+    console.error('Impossible de se connecter ', err);
+  }
 });
 
-con.connect(function (err) {
-  if (err) throw err;
+connection.connect(function (err) {
   console.log("Connecté à la base de données MySQL!");
 });
 
@@ -29,19 +26,19 @@ con.connect(function (err) {
 
 const postIndex = function (req, res) {
   var messages = req.body.messages;
-  /*var pseudo = req.body.pseudo;
-  const id = 'SELECT id FROM utilisateur WHERE pseudo = ?', [pseudo];
-  var utilisateurId = id;*/
+  var utilisateurId = req.session.user_id = result[0].id;
 
-  if (!messages || !utilisateurId ) {
+  if (!messages || !utilisateurId) {
     res.status(400).redirect('/');
     return;
   }
 
   var values = [messages, utilisateurId];
 
- const query = `INSERT INTO conversation (messages,utilisateurId ) VALUES ('${messages}' . '${utilisateurId}' )`;
-connection.query(query, (err, results) => {
+  connection.query("INSERT INTO conversation (messages,utilisateurId ) VALUES (?, ?)", values, function (err, result) {
+    if (err) throw err;
+
+    connection.query(query, (err, results) => {
       if (err) throw err;
       console.log(`Message saved: ${results.insertId}`);
 
@@ -50,9 +47,14 @@ connection.query(query, (err, results) => {
       if (callback) {
         callback();
       }
-    });
+    })
+  });
 
 }
+
+module.exports = {
+  postIndex
+};
 
 
 
